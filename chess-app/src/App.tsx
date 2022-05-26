@@ -26,34 +26,35 @@ function App() {
     }
 
     function swapPlayer() {
-        setCurrentPlayer(currentPlayer?.color === Colors.WHITE? blackPlayer : whitePlayer)
+        setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer)
     }
 
-  return (
-    <div className="app">
-        <Timer
-            currentPlayer={currentPlayer}
-            restart={restart}
-        />
-      <BoardComponent
-        board={board}
-        setBoard={setBoard}
-        currentPlayer={currentPlayer}
-        swapPlayer={swapPlayer}
-      />
+    return (
+        <div className="app">
 
-      <div>
-          <LostFigures
-              title="Черные фигуры"
-              figures={board.lostBlackFigures}
-          />
-          <LostFigures
-              title="Белые фигуры"
-              figures={board.lostWhiteFigures}
-          />
-      </div>
-    </div>
-  );
+            <BoardComponent
+                board={board}
+                setBoard={setBoard}
+                currentPlayer={currentPlayer}
+                swapPlayer={swapPlayer}
+            />
+            <div className="navigation">
+                <h3 className="player">Игрок: {currentPlayer?.color}</h3>
+                <LostFigures
+                    title="Черные фигуры"
+                    figures={board.lostBlackFigures}
+                />
+                <LostFigures
+                    title="Белые фигуры"
+                    figures={board.lostWhiteFigures}
+                />
+                <Timer
+                    currentPlayer={currentPlayer}
+                    restart={restart}
+                />
+            </div>
+        </div>
+    );
 }
 
 export default App;

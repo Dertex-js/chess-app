@@ -1,10 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .app {
-    width: 100vw;
+    margin: 0 auto;
+    min-width: 900px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,7 +35,7 @@
 }
 
 .black {
-    background-color: deepskyblue;
+    background-color: saddlebrown;
 }
 
 .white {
@@ -41,7 +43,7 @@
 }
 
 .selected {
-    background-color: brown;
+    background-color: gold;
 }
 
 .available {
@@ -51,9 +53,57 @@
     background-color: green;
 }
 
-.lost {
-    height: calc(50vh - 60px);
-    padding: 30px;
-    margin-left: 50px;
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 188px;
+    height: 512px;
     background-color: lightgray;
+    /*margin-left: 30px;*/
+}
+
+.player {
+    margin-top: 21px;
+    margin-bottom: 20px;
+}
+
+.timer {
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.timer button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.lost {
+    height: 160px;
+    width: 188px;
+
+    /*padding: 30px;*/
+    /*margin-left: 50px;*/
+
+}
+
+.lost h3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.lost-figures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
