@@ -39,15 +39,19 @@ function App() {
                 swapPlayer={swapPlayer}
             />
             <div className="navigation">
-                <h3 className="player">Игрок: {currentPlayer?.color}</h3>
-                <LostFigures
-                    title="Черные фигуры"
-                    figures={board.lostBlackFigures}
-                />
-                <LostFigures
-                    title="Белые фигуры"
-                    figures={board.lostWhiteFigures}
-                />
+                <div className="p-lost">
+                    <div className="player">
+                        <h3>Игрок: {currentPlayer?.color}</h3>
+                    </div>
+                    <LostFigures
+                        title="Черные фигуры"
+                        figures={board.lostBlackFigures}
+                    />
+                    <LostFigures
+                        title="Белые фигуры"
+                        figures={board.lostWhiteFigures}
+                    />
+                </div>
                 <Timer
                     currentPlayer={currentPlayer}
                     restart={restart}

@@ -40,7 +40,7 @@ const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
 
     return (
         <div className="timer">
-           <div>
+           <div className="restart-btn">
                <button onClick={handleRestart}>Новая игра</button>
            </div>
             <p>Черные - {blackTime}</p>

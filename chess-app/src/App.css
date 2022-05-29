@@ -6,7 +6,6 @@
 
 .app {
     margin: 0 auto;
-    min-width: 900px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -60,7 +59,12 @@
     width: 188px;
     height: 512px;
     background-color: lightgray;
-    /*margin-left: 30px;*/
+}
+
+.p-lost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .player {
@@ -70,10 +74,7 @@
 
 .timer {
     height: 128px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+
 }
 
 .timer button {
@@ -87,13 +88,18 @@
     font-size: 16px;
 }
 
+.timer p {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.timer p:first-of-type {
+    margin-left: 25px;
+}
+
 .lost {
     height: 160px;
     width: 188px;
-
-    /*padding: 30px;*/
-    /*margin-left: 50px;*/
-
 }
 
 .lost h3 {
@@ -106,4 +112,39 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+@media (max-width:700px) {
+    .app {
+        max-width:512px;
+        flex-direction: column;
+    }
+    .navigation {
+        width: 512px;
+        height: 170px;
+        display: inline-block;
+    }
+    .p-lost {
+        margin-left: 0px;
+        margin-top: 15px;
+        font-size: 14px;
+        display: grid;
+        grid-template-columns: 112px 200px 200px;
+    }
+    .player {
+        margin: 0;
+        height: 80px;
+    }
+    .lost {
+        height: 80px;
+        width: 200px;
+    }
+    .lost h3 {
+        margin-bottom: 7px;
+    }
+    .timer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 65px;
+
+    }
 }
