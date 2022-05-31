@@ -1,13 +1,17 @@
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {Player} from "../models/Player";
+import Player1 from "./Player1";
+import Player2 from "./Player2";
 import {Colors} from "../models/Colors";
 
-interface TimerProps {
+interface PlayersProps {
     currentPlayer: Player | null;
     restart: () => void;
 }
 
-const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
+
+
+const PlayersComponent: FC<PlayersProps> = ({currentPlayer, restart}) => {
     const [blackTime, setBlackTime] = useState(300)
     const [whiteTime, setWhiteTime] = useState(300)
     const timer = useRef<null | ReturnType<typeof setInterval>>(null)
@@ -39,14 +43,18 @@ const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
     }
 
     return (
-        <div className="timer">
-           <div className="restart-btn">
-               <button onClick={handleRestart}>Новая игра</button>
-           </div>
-            <p>Черные - {blackTime}</p>
-            <p>Белые - {whiteTime}</p>
+        <div className="players">
+            <Player1
+                whiteTime={whiteTime}
+            />
+            <div className="restart-btn">
+                <button onClick={handleRestart}>Новая игра</button>
+            </div>
+            <Player2
+                blackTime={blackTime}
+            />
         </div>
     );
 };
 
-export default Timer;
+export default PlayersComponent;

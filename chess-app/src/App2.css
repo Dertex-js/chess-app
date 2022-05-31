@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    margin: 0 auto;
+    width: 1440px;
+    height: 1024px;
+    background-image: url("assets/bg-2.png");
+}
+
+.content {
+    position: absolute;
+    margin-left: 135px;
+    width: 1170px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.player-interface {
+    width: 350px;
+    height: 261px;
+    left: 957px;
+    top: 25px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 10px solid #BE3535;
+    border-radius: 10px;
+}
+
+.player-interface-active {
+    width: 350px;
+    height: 261px;
+    left: 135px;
+    top: 25px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 10px solid #35BE53;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.board {
+    width: calc(64px * 8);
+    height: calc(64px * 8);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.black {
+    background-color: saddlebrown;
+}
+
+.white {
+    background-color: #eed4ac;
+}
+
+.selected {
+    background-color: gold;
+}
+
+.available {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: green;
+}
