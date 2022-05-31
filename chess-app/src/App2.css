@@ -8,7 +8,7 @@
     margin: 0 auto;
     width: 1440px;
     height: 1024px;
-    background-image: url("assets/bg-2.png");
+    background-image: url("assets/bg-layer.png");
 }
 
 .content {
@@ -34,7 +34,7 @@
     border-radius: 10px;
 }
 
-.player-interface-active {
+.active {
     width: 350px;
     height: 261px;
     left: 135px;
@@ -46,7 +46,9 @@
     border-radius: 10px;
 }
 
+.logo  {
 
+}
 
 
 

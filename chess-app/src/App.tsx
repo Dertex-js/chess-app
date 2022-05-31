@@ -4,7 +4,6 @@ import BoardComponent from "./components/BoardComponent";
 import {Board} from "./models/Board";
 import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
-import LostFigures from "./components/LostFigures";
 import PlayersComponent from "./components/PlayersComponent";
 
 
@@ -33,29 +32,12 @@ function App() {
 
     return (
         <div className="app">
-            {/*<div className="navigation">*/}
-            {/*    <div className="p-lost">*/}
-            {/*        <div className="player">*/}
-            {/*            <h3>Игрок: {currentPlayer?.color}</h3>*/}
-            {/*        </div>*/}
-            {/*        <LostFigures*/}
-            {/*            title="Черные фигуры"*/}
-            {/*            figures={board.lostBlackFigures}*/}
-            {/*        />*/}
-            {/*        <LostFigures*/}
-            {/*            title="Белые фигуры"*/}
-            {/*            figures={board.lostWhiteFigures}*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*    <Timer*/}
-            {/*        currentPlayer={currentPlayer}*/}
-            {/*        restart={restart}*/}
-            {/*    />*/}
-            {/*</div>*/}
             <div className="content">
                 <PlayersComponent
                     currentPlayer={currentPlayer}
                     restart={restart}
+                    figuresBlack={board.lostBlackFigures}
+                    figuresWhite={board.lostWhiteFigures}
                 />
                 <BoardComponent
                     board={board}
