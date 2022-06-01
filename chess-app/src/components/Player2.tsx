@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 import {Figure} from "../models/figures/Figure";
 import {Player} from "../models/Player";
 import {Colors} from "../models/Colors";
+import img from "../assets/player-2.png";
+import LostFigures from "./LostFigures";
 
 
 interface PlayerProps {
@@ -13,7 +15,15 @@ interface PlayerProps {
 const Player2: FC<PlayerProps> = ({blackTime, figuresBlack, currentPlayer}) => {
     return (
         <div className={["player-interface", (currentPlayer?.color === Colors.BLACK) ? "active" : ""].join(" ")}>
-            {blackTime}
+            <div className="logo">
+                <img src={img} alt="player"/>
+                <p>Player 2</p>
+            </div>
+            <div className="time">
+                <p>Времени осталось:</p>
+                <h1>{blackTime}</h1>
+            </div>
+            <LostFigures figures={figuresBlack}/>
         </div>
     );
 };

@@ -24,6 +24,7 @@
 }
 
 .player-interface {
+    padding: 20px 30px 20px 30px;
     width: 350px;
     height: 261px;
     left: 957px;
@@ -47,16 +48,47 @@
 }
 
 .logo  {
-
+    display: flex;
+    align-items: center;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #FFFFFF;
 }
 
+.logo img {
+    width: 64px;
+    height: 64px;
+}
 
+.logo p {
+    width: 88px;
+    height: 28px;
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
 
+.time {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
 
+.time p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BABABA;
+}
 
-
-
-
+.time h1 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
 
 
 
