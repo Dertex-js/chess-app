@@ -4,6 +4,7 @@ import Player1 from "./Player1";
 import Player2 from "./Player2";
 import {Colors} from "../models/Colors";
 import {Figure} from "../models/figures/Figure";
+import RestartBtn from "./RestartBtn";
 
 interface PlayersProps {
     currentPlayer: Player | null;
@@ -52,9 +53,9 @@ const PlayersComponent: FC<PlayersProps> = ({currentPlayer, restart, figuresBlac
                 figuresWhite={figuresWhite}
                 currentPlayer={currentPlayer}
             />
-            <div className="restart-btn">
-                <button onClick={handleRestart}>Новая игра</button>
-            </div>
+            <RestartBtn
+                handleRestart={handleRestart}
+            />
             <Player2
                 blackTime={blackTime}
                 figuresBlack={figuresBlack}

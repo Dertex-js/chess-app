@@ -20,13 +20,14 @@
 .players {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 25px;
 }
 
 .player-interface {
-    padding: 20px 30px 20px 30px;
-    width: 350px;
-    height: 261px;
+    padding: 20px 30px 20px 20px;
+    width: 290px;
+    height: 221px;
     left: 957px;
     top: 25px;
 
@@ -36,8 +37,8 @@
 }
 
 .active {
-    width: 350px;
-    height: 261px;
+    width: 290px;
+    height: 221px;
     left: 135px;
     top: 25px;
 
@@ -91,8 +92,74 @@
 }
 
 
+.restart-btn button {
+    width: 173px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #35BE53;
+    border: 0px;
+    border-radius: 5px;
+    filter: drop-shadow(-5px 5px 18px rgba(0, 0, 0, 0.5));
+}
+
+.restart-btn p {
+    margin-left: 8px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.lost {
+    width: 290px;
+    height: 108px;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.lost h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+}
+
+.lost-figures {
+    width: 232px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lost-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
 
 .board {
+    display: flex;
+    justify-content: center;
+    margin-top: 98px;
+}
+
+.board-plate {
+
     width: calc(64px * 8);
     height: calc(64px * 8);
     display: flex;

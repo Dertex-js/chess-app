@@ -19,6 +19,7 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
             selectedCell.moveFigure(cell);
             swapPlayer()
             setSelectedCell(null);
+            updateBoard()
         } else {
             if(cell.figure?.color === currentPlayer?.color) {
                 setSelectedCell(cell);
@@ -43,8 +44,8 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
     }
 
     return (
-        <div>
-            <div className="board">
+        <div className="board">
+            <div className="board-plate">
                 {board.cells.map((row, index) =>
                     <React.Fragment key={index}>
                         {row.map(cell =>
