@@ -50,7 +50,7 @@ const PlayersComponent: FC<PlayersProps> = ({currentPlayer, restart, figuresBlac
         <div className="players">
             <Player1
                 whiteTime={whiteTime}
-                figuresWhite={figuresWhite}
+                figuresWhite={figuresBlack}
                 currentPlayer={currentPlayer}
             />
             <RestartBtn
@@ -58,7 +58,7 @@ const PlayersComponent: FC<PlayersProps> = ({currentPlayer, restart, figuresBlac
             />
             <Player2
                 blackTime={blackTime}
-                figuresBlack={figuresBlack}
+                figuresBlack={figuresWhite}
                 currentPlayer={currentPlayer}
             />
         </div>

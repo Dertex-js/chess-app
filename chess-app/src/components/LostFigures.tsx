@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useMemo } from 'react';
 import {Figure, FigureNames} from "../models/figures/Figure";
 import imgQueen from "../assets/queen.png"
 import imgBishop from "../assets/bishop.png"
@@ -11,17 +11,34 @@ interface LostFiguresProps {
     figures: Figure[]
 }
 
+const fallenCheesesInitial: { [figure: string]: number } = Object.keys(FigureNames).reduce((stack, item) => ({ ...stack , [item]: 0 }), {});
+
+const getFigure = (figure: FigureNames): keyof typeof FigureNames => {
+    switch (figure) {
+        case FigureNames.KNIGHT:
+            return 'KNIGHT'
+        case FigureNames.PAWN:
+            return 'PAWN'
+        case FigureNames.QUEEN:
+            return 'QUEEN'
+        case FigureNames.ROOK:
+            return 'ROOK'
+        case FigureNames.BISHOP:
+            return 'BISHOP'
+        default:
+            return 'FIGURE'
+    }
+}
+
+
 const LostFigures: FC<LostFiguresProps> = ({figures}) => {
 
-    const [lostFigures, setLostFigures] = useState<number[]>([0, 0, 0, 0, 0])
-    let counter = [0, 0, 0, 0, 0]
-    for (let i = 0; i < figures.length; i++) {
+    const fallenChess = useMemo(() => {
+        return figures.reduce((accumulator, value) => {
+            return {...accumulator, [getFigure(value.name)]: (accumulator[(getFigure(value.name))] || 0) + 1 };
+        }, fallenCheesesInitial);
+    }, [figures.length]);
 
-        if (figures[i].name === FigureNames.QUEEN) {
-
-            setLostFigures([counter[0]++, 0, 0, 0, 0])
-        }
-    }
 
     return (
         <div className="lost">
@@ -29,23 +46,23 @@ const LostFigures: FC<LostFiguresProps> = ({figures}) => {
             <div className="lost-figures">
                 <div className="lost-figure">
                     <img src={imgQueen} alt=""/>
-                    {lostFigures[0]}
+                    {fallenChess.QUEEN}
                 </div>
                 <div className="lost-figure">
                     <img src={imgBishop} alt=""/>
-                    {lostFigures[1]}
+                    {fallenChess.BISHOP}
                 </div>
                 <div className="lost-figure">
                     <img src={imgKnight} alt=""/>
-                    {lostFigures[2]}
+                    {fallenChess.KNIGHT}
                 </div>
                 <div className="lost-figure">
                     <img src={imgRook} alt=""/>
-                    {lostFigures[3]}
+                    {fallenChess.ROOK}
                 </div>
                 <div className="lost-figure">
                     <img src={imgPawn} alt=""/>
-                    {lostFigures[4]}
+                    {fallenChess.PAWN}
                 </div>
             </div>
         </div>
