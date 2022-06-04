@@ -13,12 +13,20 @@ interface PlayerProps {
 }
 
 const Player2: FC<PlayerProps> = ({blackTime, figuresBlack, currentPlayer}) => {
-    const minutes = Math.trunc(blackTime/60);
-    const seconds = blackTime % 60;
+
+    let minutes = Math.trunc(blackTime/60);
+    let seconds = blackTime % 60;
+
+    if (blackTime < 0) {
+        minutes = 0;
+        seconds = 0;
+    }
+
     const formatted = [
         minutes.toString().padStart(2, '0'),
         seconds.toString().padStart(2, '0')
     ].join(':');
+
 
     return (
         <div className={["player-interface", (currentPlayer?.color === Colors.BLACK) ? "active" : ""].join(" ")}>

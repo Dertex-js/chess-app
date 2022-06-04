@@ -13,14 +13,19 @@ interface PlayerProps {
 }
 
 const Player1: FC<PlayerProps> = ({whiteTime, figuresWhite, currentPlayer}) => {
-    const minutes = Math.trunc(whiteTime/60);
-    const seconds = whiteTime % 60;
+
+    let minutes = Math.trunc(whiteTime/60);
+    let seconds = whiteTime % 60;
+
+    if (whiteTime < 0) {
+        minutes = 0;
+        seconds = 0;
+    }
+
     const formatted = [
         minutes.toString().padStart(2, '0'),
         seconds.toString().padStart(2, '0')
     ].join(':');
-
-
 
 
     return (
