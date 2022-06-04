@@ -46,23 +46,23 @@ const LostFigures: FC<LostFiguresProps> = ({figures}) => {
             <div className="lost-figures">
                 <div className="lost-figure">
                     <img src={imgQueen} alt=""/>
-                    {fallenChess.QUEEN}
+                    <p>{fallenChess.QUEEN}</p>
                 </div>
                 <div className="lost-figure">
                     <img src={imgBishop} alt=""/>
-                    {fallenChess.BISHOP}
+                    <p>{fallenChess.BISHOP}</p>
                 </div>
                 <div className="lost-figure">
                     <img src={imgKnight} alt=""/>
-                    {fallenChess.KNIGHT}
+                    <p>{fallenChess.KNIGHT}</p>
                 </div>
                 <div className="lost-figure">
                     <img src={imgRook} alt=""/>
-                    {fallenChess.ROOK}
+                    <p>{fallenChess.ROOK}</p>
                 </div>
                 <div className="lost-figure">
                     <img src={imgPawn} alt=""/>
-                    {fallenChess.PAWN}
+                    <p>{fallenChess.PAWN}</p>
                 </div>
             </div>
         </div>

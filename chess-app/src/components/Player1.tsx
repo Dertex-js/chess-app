@@ -13,7 +13,12 @@ interface PlayerProps {
 }
 
 const Player1: FC<PlayerProps> = ({whiteTime, figuresWhite, currentPlayer}) => {
-
+    const minutes = Math.trunc(whiteTime/60);
+    const seconds = whiteTime % 60;
+    const formatted = [
+        minutes.toString().padStart(2, '0'),
+        seconds.toString().padStart(2, '0')
+    ].join(':');
 
 
 
@@ -26,7 +31,9 @@ const Player1: FC<PlayerProps> = ({whiteTime, figuresWhite, currentPlayer}) => {
             </div>
             <div className="time">
                 <p>Времени осталось:</p>
-                <h1>{whiteTime}</h1>
+                <h1>
+                    {formatted}
+                </h1>
             </div>
             <LostFigures figures={figuresWhite}/>
 

@@ -13,6 +13,13 @@ interface PlayerProps {
 }
 
 const Player2: FC<PlayerProps> = ({blackTime, figuresBlack, currentPlayer}) => {
+    const minutes = Math.trunc(blackTime/60);
+    const seconds = blackTime % 60;
+    const formatted = [
+        minutes.toString().padStart(2, '0'),
+        seconds.toString().padStart(2, '0')
+    ].join(':');
+
     return (
         <div className={["player-interface", (currentPlayer?.color === Colors.BLACK) ? "active" : ""].join(" ")}>
             <div className="logo">
@@ -21,7 +28,7 @@ const Player2: FC<PlayerProps> = ({blackTime, figuresBlack, currentPlayer}) => {
             </div>
             <div className="time">
                 <p>Времени осталось:</p>
-                <h1>{blackTime}</h1>
+                <h1>{formatted}</h1>
             </div>
             <LostFigures figures={figuresBlack}/>
         </div>

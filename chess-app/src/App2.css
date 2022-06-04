@@ -147,10 +147,13 @@
     align-items: center;
 }
 
-
-
-
-
+.lost-figure p {
+    margin-top: 7px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
 
 .board {
     display: flex;
@@ -171,8 +174,9 @@
 }
 
 .cell {
-    width: 62px;
-    height: 62px;
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
     border: 1px solid rgba(0, 0, 0, 0.56);
     display: flex;
     justify-content: center;
