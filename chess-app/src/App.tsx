@@ -16,13 +16,13 @@ function App() {
 
     useEffect(() => {
         restart()
-        setCurrentPlayer(whitePlayer);
     }, [])
 
     function restart() {
         const newBoard = new Board();
         newBoard.initCells()
         newBoard.addFigures()
+        setCurrentPlayer(whitePlayer);
         setBoard(newBoard)
     }
 
