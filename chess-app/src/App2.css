@@ -4,11 +4,16 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-image: url("assets/bg-layer.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .app {
     margin: 0 auto;
     width: 1440px;
-    height: 1024px;
-    background-image: url("assets/bg-layer.png");
+    height: 100%;
 }
 
 .content {
@@ -159,7 +164,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 98px;
+    margin-top: 60px;
 
 }
 
